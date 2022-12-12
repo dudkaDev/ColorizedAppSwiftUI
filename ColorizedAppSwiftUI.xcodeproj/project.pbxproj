@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		5587035B294795B8008B1B77 /* ColorizedAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587035A294795B8008B1B77 /* ColorizedAppSwiftUIApp.swift */; };
-		5587035D294795B8008B1B77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587035C294795B8008B1B77 /* ContentView.swift */; };
+		5587035D294795B8008B1B77 /* ColorizedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587035C294795B8008B1B77 /* ColorizedView.swift */; };
 		5587035F294795BC008B1B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5587035E294795BC008B1B77 /* Assets.xcassets */; };
 		55870362294795BC008B1B77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55870361294795BC008B1B77 /* Preview Assets.xcassets */; };
+		5587036929479638008B1B77 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587036829479638008B1B77 /* SliderView.swift */; };
+		5587036B29479F00008B1B77 /* TextValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587036A29479F00008B1B77 /* TextValueView.swift */; };
+		5587036D2947A02A008B1B77 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587036C2947A02A008B1B77 /* TextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		55870357294795B8008B1B77 /* ColorizedAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorizedAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5587035A294795B8008B1B77 /* ColorizedAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorizedAppSwiftUIApp.swift; sourceTree = "<group>"; };
-		5587035C294795B8008B1B77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5587035C294795B8008B1B77 /* ColorizedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorizedView.swift; sourceTree = "<group>"; };
 		5587035E294795BC008B1B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55870361294795BC008B1B77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5587036829479638008B1B77 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		5587036A29479F00008B1B77 /* TextValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValueView.swift; sourceTree = "<group>"; };
+		5587036C2947A02A008B1B77 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				5587035A294795B8008B1B77 /* ColorizedAppSwiftUIApp.swift */,
-				5587035C294795B8008B1B77 /* ContentView.swift */,
+				5587035C294795B8008B1B77 /* ColorizedView.swift */,
+				5587036829479638008B1B77 /* SliderView.swift */,
+				5587036C2947A02A008B1B77 /* TextFieldView.swift */,
+				5587036A29479F00008B1B77 /* TextValueView.swift */,
 				5587035E294795BC008B1B77 /* Assets.xcassets */,
 				55870360294795BC008B1B77 /* Preview Content */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5587035D294795B8008B1B77 /* ContentView.swift in Sources */,
+				5587036929479638008B1B77 /* SliderView.swift in Sources */,
+				5587036D2947A02A008B1B77 /* TextFieldView.swift in Sources */,
+				5587035D294795B8008B1B77 /* ColorizedView.swift in Sources */,
 				5587035B294795B8008B1B77 /* ColorizedAppSwiftUIApp.swift in Sources */,
+				5587036B29479F00008B1B77 /* TextValueView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +285,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +294,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.AndreyAbakumov.ColorizedAppSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,8 +317,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +326,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.AndreyAbakumov.ColorizedAppSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
