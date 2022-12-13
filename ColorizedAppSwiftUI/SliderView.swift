@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SliderView: View {
-    
+
     @State private var textValue = ""
     @Binding var sliderValue: Double
     let color: Color
@@ -17,19 +17,16 @@ struct SliderView: View {
         HStack {
             TextValueView(value: sliderValue)
             Slider(value: $sliderValue, in: 0...255, step: 1)
+                .animation(.easeInOut, value: sliderValue)
                 .tint(color)
                 .onChange(of: sliderValue) { newValue in
-                    textValue = String(lround(sliderValue))
+                    textValue = String(lround(newValue))
                 }
             TextFieldView(textValue: $textValue, value: $sliderValue)
-                .onAppear {
-                    textValue = String(lround(sliderValue))
-                }
         }
-    }
-    
-    private func convertValue() {
-        
+        .onAppear {
+            textValue = String(lround(sliderValue))
+        }
     }
 }
 

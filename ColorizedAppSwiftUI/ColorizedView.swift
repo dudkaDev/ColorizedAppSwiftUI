@@ -13,14 +13,28 @@ struct ColorizedView: View {
     @State private var green = 55.0
     @State private var blue = 55.0
     
+    @FocusState private var fieldIsFocused: Bool
+    
     var body: some View {
+        
         ZStack {
-            BackgroundView()
+            Color(.systemCyan).ignoresSafeArea()
             VStack(spacing: 15) {
                 ColorView(red: red, green: green, blue: blue)
-                SliderView(sliderValue: $red, color: .red)
-                SliderView(sliderValue: $green, color: .green)
-                SliderView(sliderValue: $blue, color: .blue)
+                VStack {
+                    SliderView(sliderValue: $red, color: .red)
+                    SliderView(sliderValue: $green, color: .green)
+                    SliderView(sliderValue: $blue, color: .blue)
+                }
+                .focused($fieldIsFocused)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            fieldIsFocused = false
+                        }
+                    }
+                }
                 Spacer()
             }
             .padding()

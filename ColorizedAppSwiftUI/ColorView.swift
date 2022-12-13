@@ -16,8 +16,9 @@ struct ColorView: View {
         Color(red: red/255, green: green/255, blue: blue/255)
             .frame(height: 150)
             .cornerRadius(12)
-            .overlay(RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.white, lineWidth: 6)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.white, lineWidth: 6)
             )
     }
 }
