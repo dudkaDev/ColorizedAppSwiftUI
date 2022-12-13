@@ -13,7 +13,11 @@ struct TextFieldView: View {
     
     var body: some View {
         TextField("", text: $textValue)
-            .border(.black)
+            .multilineTextAlignment(.trailing)
+            .textFieldStyle(.roundedBorder)
+            .frame(width: 60)
+            .keyboardType(.decimalPad)
+            
     }
 }
 

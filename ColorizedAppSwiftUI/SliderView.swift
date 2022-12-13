@@ -10,21 +10,31 @@ import SwiftUI
 struct SliderView: View {
     
     @State private var textValue = ""
-    @Binding var value: Double
+    @Binding var sliderValue: Double
     let color: Color
     
     var body: some View {
         HStack {
-            TextValueView(value: value)
-            Slider(value: $value, in: 0...255, step: 1)
+            TextValueView(value: sliderValue)
+            Slider(value: $sliderValue, in: 0...255, step: 1)
                 .tint(color)
-            TextFieldView(textValue: $textValue, value: $value)
+                .onChange(of: sliderValue) { newValue in
+                    textValue = String(lround(sliderValue))
+                }
+            TextFieldView(textValue: $textValue, value: $sliderValue)
+                .onAppear {
+                    textValue = String(lround(sliderValue))
+                }
         }
+    }
+    
+    private func convertValue() {
+        
     }
 }
 
 struct SliderView_Previews: PreviewProvider {
     static var previews: some View {
-        SliderView(value: .constant(55), color: .red)
+        SliderView(sliderValue: .constant(55), color: .red)
     }
 }

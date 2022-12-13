@@ -12,13 +12,15 @@ struct TextValueView: View {
     
     var body: some View {
         Text("\(lround(value))")
+            .bold()
+            .foregroundColor(Color.white)
+            .frame(width: 40)
+            
     }
 }
 
 struct TextValueView_Previews: PreviewProvider {
-    
-    
     static var previews: some View {
-        TextValueView(value: 55)
+        TextValueView(value: 255)
     }
 }
